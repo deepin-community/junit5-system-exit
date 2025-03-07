@@ -1,0 +1,29 @@
+From: =?utf-8?b?SsOpcsO0bWUgQ2hhcmFvdWk=?= <jerome@riseup.net>
+Date: Sat, 23 Jul 2022 22:35:31 -0400
+Subject: remove signing plugin
+
+Forwarded: not-needed
+---
+ build.gradle | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/build.gradle b/build.gradle
+index 2c314de..c1a8a6a 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -25,7 +25,6 @@
+ plugins {
+     id 'java-library'
+     id 'maven-publish'
+-    id 'signing'
+ }
+ 
+ ext {
+@@ -129,7 +128,3 @@ javadoc {
+         options.addBooleanOption('html4', true)
+     }
+ }
+-
+-signing {
+-    sign publishing.publications.mavenJava
+-}

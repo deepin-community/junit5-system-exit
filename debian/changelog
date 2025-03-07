@@ -1,5 +1,32 @@
-template-repository (1.0-1) unstable; urgency=medium
+junit5-system-exit (1.1.2-5) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * Fixed the build failure with Java 21 (Closes: #1053041)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 11 Oct 2023 14:00:45 +0200
+
+junit5-system-exit (1.1.2-4) unstable; urgency=medium
+
+  * Team upload.
+  * Removed the -java-doc package (Closes: #1026255)
+  * Standards-Version updated to 4.6.2
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sat, 17 Dec 2022 18:58:59 +0100
+
+junit5-system-exit (1.1.2-3) unstable; urgency=medium
+
+  * Source-only upload, no changes.
+
+ -- Jérôme Charaoui <jerome@riseup.net>  Wed, 28 Sep 2022 16:08:47 -0400
+
+junit5-system-exit (1.1.2-2) unstable; urgency=medium
+
+  * d/control: mark documentation package with Multi-Arch: foreign
+
+ -- Jérôme Charaoui <jerome@riseup.net>  Wed, 28 Sep 2022 16:08:25 -0400
+
+junit5-system-exit (1.1.2-1) unstable; urgency=medium
+
+  * Initial upload. (Closes: #1015957)
+
+ -- Jérôme Charaoui <jerome@riseup.net>  Sun, 24 Jul 2022 09:06:38 -0400

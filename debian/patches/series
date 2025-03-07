@@ -1,0 +1,7 @@
+0001-remove-signing-plugin.patch
+0002-fix-maven-publishing-plugin-config.patch
+0003-remove-junit5-test-task.patch
+0004-fix-build-tasks.patch
+0005-add-testsJar-task.patch
+0006-fix-dependency-resolution.patch
+0007-fix-JUnit5-compatibility-in-tests.patch

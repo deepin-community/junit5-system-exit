@@ -1,4 +1,27 @@
 #!/usr/bin/make -f
 
+include /usr/share/javahelper/java-vars.mk
+include /usr/share/dpkg/pkg-info.mk
+
+NAME=junit5-system-exit
+
 %:
-	dh $@
+	dh $@ --buildsystem=gradle --with javahelper,maven_repo_helper
+
+override_dh_auto_build:
+	dh_auto_build -- jar testsJar
+
+execute_after_dh_auto_build:
+	cd build/libs && \
+		ln -sf $(NAME)-$(DEB_VERSION_UPSTREAM).jar $(NAME).jar && \
+		ln -sf $(NAME)-$(DEB_VERSION_UPSTREAM)-tests.jar $(NAME)-tests.jar
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	java \
+		-Djava.security.manager=allow \
+		-jar /usr/share/java/junit-platform-console-standalone.jar \
+		-cp build/libs/junit5-system-exit.jar:build/libs/junit5-system-exit-tests.jar \
+		--scan-classpath \
+		--fail-if-no-tests
+endif

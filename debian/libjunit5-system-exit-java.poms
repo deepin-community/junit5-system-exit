@@ -1,0 +1,1 @@
+build/debian/junit5-system-exit.pom --artifact=build/libs/junit5-system-exit.jar --java-lib

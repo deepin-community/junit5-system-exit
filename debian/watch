@@ -1,0 +1,4 @@
+version=4
+opts="mode=git,compression=xz" \
+https://github.com/tginsberg/junit5-system-exit.git \
+refs/tags/v\.?@ANY_VERSION@

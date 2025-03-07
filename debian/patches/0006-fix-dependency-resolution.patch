@@ -1,0 +1,22 @@
+From: =?utf-8?b?SsOpcsO0bWUgQ2hhcmFvdWk=?= <jerome@riseup.net>
+Date: Sat, 23 Jul 2022 22:53:59 -0400
+Subject: fix dependency resolution
+
+Forwarded: not-needed
+---
+ build.gradle | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build.gradle b/build.gradle
+index 2f41392..b76dc3c 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -43,7 +43,7 @@ dependencies {
+ 
+     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
+-    testImplementation("org.junit.platform:junit-platform-launcher")
++    testImplementation("org.junit.platform:junit-platform-launcher:debian")
+     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+ }
+ 

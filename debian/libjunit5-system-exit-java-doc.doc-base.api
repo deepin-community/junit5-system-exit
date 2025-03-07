@@ -1,0 +1,9 @@
+Document: libjunit5-system-exit-java
+Title: API JavaDoc for JUnit5 System.exit() Extension
+Author: Todd Ginsberg <todd@ginsberg.com>
+Abstract: This is the API JavaDoc for libjunit5-system-exit-java
+Section: Programming/Java
+
+Format: HTML
+Index: /usr/share/doc/libjunit5-system-exit-java/api/index.html
+Files: /usr/share/doc/libjunit5-system-exit-java/api/*.html
