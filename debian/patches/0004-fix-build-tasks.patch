@@ -1,0 +1,28 @@
+From: =?utf-8?b?SsOpcsO0bWUgQ2hhcmFvdWk=?= <jerome@riseup.net>
+Date: Sat, 23 Jul 2022 22:39:42 -0400
+Subject: fix build tasks
+
+Forwarded: not-needed
+---
+ build.gradle | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/build.gradle b/build.gradle
+index 27cc745..bf863ac 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -49,12 +49,12 @@ dependencies {
+ 
+ task sourcesJar(type: Jar) {
+     from sourceSets.main.allJava
+-    archiveClassifier = 'sources'
++    classifier = 'sources'
+ }
+ 
+ task javadocJar(type: Jar) {
+     from javadoc
+-    archiveClassifier = 'javadoc'
++    classifier = 'javadoc'
+ }
+ 
+ publishing {

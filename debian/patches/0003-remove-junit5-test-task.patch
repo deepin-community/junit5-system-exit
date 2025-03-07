@@ -1,0 +1,33 @@
+From: =?utf-8?b?SsOpcsO0bWUgQ2hhcmFvdWk=?= <jerome@riseup.net>
+Date: Sat, 23 Jul 2022 22:37:29 -0400
+Subject: remove junit5 test task
+
+The current version of Gradle in Debian does not support executing Junit5 tests.
+
+Forwarded: not-needed
+---
+ build.gradle | 11 -----------
+ 1 file changed, 11 deletions(-)
+
+diff --git a/build.gradle b/build.gradle
+index 75f4654..27cc745 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -47,17 +47,6 @@ dependencies {
+     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+ }
+ 
+-test {
+-    useJUnitPlatform()
+-    afterSuite { desc, result ->
+-        if (!desc.parent) {
+-            println "\nTest result: ${result.resultType}"
+-            println "Test summary: ${result.successfulTestCount} succeeded, " +
+-                    "${result.failedTestCount} failed"
+-        }
+-    }
+-}
+-
+ task sourcesJar(type: Jar) {
+     from sourceSets.main.allJava
+     archiveClassifier = 'sources'

@@ -1,0 +1,71 @@
+From: =?utf-8?b?SsOpcsO0bWUgQ2hhcmFvdWk=?= <jerome@riseup.net>
+Date: Sat, 23 Jul 2022 22:36:51 -0400
+Subject: fix maven publishing plugin config
+
+Forwarded: not-needed
+---
+ build.gradle | 47 +----------------------------------------------
+ 1 file changed, 1 insertion(+), 46 deletions(-)
+
+diff --git a/build.gradle b/build.gradle
+index c1a8a6a..75f4654 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -71,56 +71,11 @@ task javadocJar(type: Jar) {
+ publishing {
+     publications {
+         mavenJava(MavenPublication) {
+-            groupId = project.group
+-            artifactId = project.name
+-            version = project.version
+             from components.java
+             artifact sourcesJar
+             artifact javadocJar
+-            pom {
+-                name = 'junit5-system-exit'
+-                description = 'A JUnit5 Extension to help write tests that call System.exit()'
+-                url = 'https://github.com/tginsberg/junit5-system-exit'
+-                organization {
+-                    name = 'com.ginsberg'
+-                    url = 'https://github.com/tginsberg'
+-                }
+-                issueManagement {
+-                    system = 'GitHub'
+-                    url = 'https://github.com/tginsberg/junit5-system-exit/issues'
+-                }
+-                licenses {
+-                    license {
+-                        name = 'MIT License'
+-                        url = 'https://opensource.org/licenses/MIT'
+-                    }
+-                }
+-                scm {
+-                    connection = 'scm:git:https://github.com/tginsberg/junit5-system-exit.git'
+-                    developerConnection = 'scm:git:https://github.com/tginsberg/junit5-system-exit.git/'
+-                    url = 'https://github.com/tginsberg/junit5-system-exit'
+-                }
+-                developers {
+-                    developer {
+-                        id = 'tginsberg'
+-                        name = 'Todd Ginsberg'
+-                        email = 'todd@ginsberg.com'
+-                    }
+-                }
+-            }
+         }
+-    }
+-    repositories {
+-        maven {
+-            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+-            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+-            credentials {
+-                username sonatypeUsername
+-                password sonatypePassword
+-            }
+-        }
+-    }
++   }
+ }
+ 
+ javadoc {

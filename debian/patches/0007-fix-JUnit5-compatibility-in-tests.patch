@@ -1,0 +1,24 @@
+From: =?utf-8?b?SsOpcsO0bWUgQ2hhcmFvdWk=?= <jerome@riseup.net>
+Date: Sat, 23 Jul 2022 22:55:13 -0400
+Subject: fix JUnit5 compatibility in tests
+
+This feature is only available in JUnit 5.5 and later.
+
+Forwarded: not-needed
+---
+ src/test/java/com/ginsberg/junit/exit/WithParameterizedTest.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/test/java/com/ginsberg/junit/exit/WithParameterizedTest.java b/src/test/java/com/ginsberg/junit/exit/WithParameterizedTest.java
+index 4dbb3a6..a6bd036 100644
+--- a/src/test/java/com/ginsberg/junit/exit/WithParameterizedTest.java
++++ b/src/test/java/com/ginsberg/junit/exit/WithParameterizedTest.java
+@@ -19,7 +19,7 @@ public class WithParameterizedTest {
+     @EnabledIfSystemProperty(named = "running_within_test", matches = "true")
+     static class SucceedsAndThenFails {
+         @ParameterizedTest(name = "{index}")
+-        @ValueSource(booleans = {true, false, true})
++        @ValueSource(strings = { "true", "false", "true" })
+         @ExpectSystemExit
+         public void testBasicAssumptions(boolean shouldSucceed) {
+             if(shouldSucceed) {

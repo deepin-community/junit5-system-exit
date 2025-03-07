@@ -1,0 +1,25 @@
+From: =?utf-8?b?SsOpcsO0bWUgQ2hhcmFvdWk=?= <jerome@riseup.net>
+Date: Sat, 23 Jul 2022 22:45:55 -0400
+Subject: add testsJar task
+
+Forwarded: not-needed
+---
+ build.gradle | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/build.gradle b/build.gradle
+index bf863ac..2f41392 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -57,6 +57,11 @@ task javadocJar(type: Jar) {
+     classifier = 'javadoc'
+ }
+ 
++task testsJar(type: Jar, dependsOn: testClasses) {
++    from sourceSets.test.output
++    classifier = 'tests'
++}
++
+ publishing {
+     publications {
+         mavenJava(MavenPublication) {
